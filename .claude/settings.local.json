@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(& \"C:\\\\Program Files\\\\Git\\\\bin\\\\git.exe\" commit -m \"Add AI stock analysis agent workflow with documentation\")"
+    ]
+  }
+}
