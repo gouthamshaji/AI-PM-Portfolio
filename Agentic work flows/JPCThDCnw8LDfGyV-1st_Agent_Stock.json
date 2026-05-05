@@ -1,0 +1,124 @@
+{
+  "name": "1st Agent Stock",
+  "nodes": [
+    {
+      "parameters": {
+        "public": true,
+        "availableInChat": true,
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.4,
+      "position": [
+        0,
+        0
+      ],
+      "id": "e163fdc9-eb94-4dfa-88ca-415cdaeeb514",
+      "name": "When chat message received",
+      "webhookId": "71dd5bbf-2f39-4cec-9006-9bb0891b2c2b"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=You are a professional stock market analyst. Analyze the stock ticker symbol: {{ $json.chatInput }}\n\nProvide a concise analysis in the following format:\n\n**Stock: [TICKER SYMBOL]**\n**Current Context:** [Brief 1-2 sentence market context]\n\n**Technical Analysis:**\n- Price trend (bullish/bearish/sideways)\n- Key support and resistance levels\n- Moving average signals\n- Volume analysis\n\n**Fundamental Highlights:**\n- Recent earnings/revenue trends\n- Key financial metrics (P/E, debt ratios)\n- Industry position and competitive advantages\n- Recent news impact\n\n**Recommendation:**\n- **Action:** BUY / HOLD / SELL\n- **Confidence Level:** High/Medium/Low\n- **Price Target:** [If applicable]\n- **Stop Loss:** [If applicable]\n- **Time Horizon:** Short-term (1-3 months) / Medium-term (3-12 months)\n\n**Key Risks:**\n- [List 2-3 main risks to watch]\n\n**Rationale:**\n[2-3 sentences explaining the recommendation]\n\nKeep the analysis under 300 words total. Focus on actionable insights for retail investors.\nMake the output in plain english\n\n",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        208,
+        0
+      ],
+      "id": "fbc72416-00b0-40aa-be29-57bce444d20d",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        80,
+        208
+      ],
+      "id": "b870a85f-3043-4f27-b6e0-06db55c8b45a",
+      "name": "Google Gemini Chat Model",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "3eiryMVKYXLcDeOw",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sendTo": "gouthamshaji@gmail.com",
+        "subject": "=Stock Analysis of  {{ $('When chat message received').item.json.chatInput }}",
+        "message": "={{ $json.output }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        560,
+        5.25
+      ],
+      "id": "d508055f-119c-4eb4-a76c-855697c45f64",
+      "name": "Send a message",
+      "webhookId": "7d5c7412-eb8d-4eeb-bc17-8b5c36e94d72",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "sG99HiQtte7fBkyn",
+          "name": "Gmail account"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "When chat message received": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Send a message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": false
+  },
+  "staticData": null,
+  "pinData": {},
+  "triggerCount": 0,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  }
+}
