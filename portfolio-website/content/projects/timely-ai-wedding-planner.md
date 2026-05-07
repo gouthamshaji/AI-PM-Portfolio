@@ -6,6 +6,7 @@ status: "published"
 date: "2025-03-27"
 type: "vibe-coding"
 githubUrl: "https://github.com/gouthamshaji/timely-ai-wedding-planner"
+liveUrl: "https://timely-ai-wedding-planner-tsnh.vercel.app/"
 tags: ["Next.js", "Supabase", "AI", "Wedding Planning"]
 ---
 

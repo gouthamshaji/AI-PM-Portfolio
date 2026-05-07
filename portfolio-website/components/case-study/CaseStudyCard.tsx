@@ -1,7 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, Briefcase } from "lucide-react";
+import { ArrowRight, Briefcase, ExternalLink } from "lucide-react";
+import { Github } from "@/components/icons";
 import Link from "next/link";
 import { Card } from "@/components/ui/Card";
 import { Badge } from "@/components/ui/Badge";
@@ -12,6 +13,8 @@ interface CaseStudyCardProps {
     description: string;
     slug: string;
     tags: string[];
+    liveUrl?: string;
+    githubUrl?: string;
   };
 }
 
@@ -20,7 +23,7 @@ export function CaseStudyCard({ caseStudy }: CaseStudyCardProps) {
     <motion.div
       whileHover={{ scale: 1.02 }}
       transition={{ type: "spring", stiffness: 300 }}
-      className="group"
+      className="group relative"
     >
       <Link href={`/case-studies/${caseStudy.slug}`}>
         <Card className="h-full flex flex-col hover:border-emerald-500/50 hover:shadow-[0_0_30px_-5px_rgba(16,185,129,0.3)] transition-all duration-300">
@@ -44,6 +47,34 @@ export function CaseStudyCard({ caseStudy }: CaseStudyCardProps) {
           </div>
         </Card>
       </Link>
+      
+      {/* External Links */}
+      {(caseStudy.liveUrl || caseStudy.githubUrl) && (
+        <div className="absolute top-4 right-4 z-20 flex gap-2">
+          {caseStudy.githubUrl && (
+            <a
+              href={caseStudy.githubUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 rounded-full bg-black/50 border border-white/10 text-zinc-400 hover:text-white hover:border-white/30 backdrop-blur-md transition-colors"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <Github size={16} />
+            </a>
+          )}
+          {caseStudy.liveUrl && (
+            <a
+              href={caseStudy.liveUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 rounded-full bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:text-emerald-300 hover:bg-emerald-500/30 backdrop-blur-md transition-colors"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <ExternalLink size={16} />
+            </a>
+          )}
+        </div>
+      )}
     </motion.div>
   );
 }

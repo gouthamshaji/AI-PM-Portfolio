@@ -5,7 +5,7 @@ description: "AI-powered baby product discovery platform"
 status: "published"
 date: "2025-03-26"
 type: "vibe-coding"
-liveUrl: "https://peeko-companion.vercel.app"
+liveUrl: "https://peeko-daily-companion.netlify.app/"
 githubUrl: "https://github.com/gouthamshaji/peeko-companion"
 tags: ["JavaScript", "AI", "E-commerce", "Baby Products"]
 ---

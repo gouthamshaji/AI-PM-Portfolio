@@ -20,14 +20,30 @@ const stats = [
 ];
 
 const techStack = [
-  { category: "AI/ML", items: ["Gemini", "Claude", "GPT"], color: "cyan" },
-  { category: "Automation", items: ["n8n", "Zapier", "Playwright"], color: "blue" },
-  { category: "Development", items: ["Next.js", "React", "TypeScript"], color: "purple" },
-  { category: "Database", items: ["Supabase", "Sheets", "JSON"], color: "emerald" },
-  { category: "Design", items: ["Figma", "IA", "VDS"], color: "pink" },
-  { category: "Analytics", items: ["Plausible", "PostHog", "KPIs"], color: "orange" },
-  { category: "Documentation", items: ["PRDs", "Specs", "Stories"], color: "blue" },
-  { category: "Frameworks", items: ["ICE/RICE", "MoSCoW", "A/B Test"], color: "purple" },
+  { category: "AI Tools", items: ["Claude", "Cursor", "Lovable", "Magic Patterns", "NotebookLM", "Google Antigravity"], color: "cyan" },
+  { category: "Product & Collab", items: ["Jira", "Confluence", "Figma", "Miro", "Notion AI", "Gamma"], color: "purple" },
+  { category: "Automation", items: ["n8n"], color: "blue" },
+  { category: "Backend", items: ["Java", "Spring Boot", "SQL"], color: "emerald" },
+  { category: "API", items: ["Postman", "Swagger"], color: "orange" },
+  { category: "Testing & Monitoring", items: ["JMeter", "Prometheus", "Grafana"], color: "pink" },
+];
+
+const coreSkills = [
+  {
+    category: "Product Management",
+    skills: ["Product Discovery", "Product Strategy", "PRD Writing", "User Stories", "Feature Prioritization", "Product Roadmapping", "Backlog Management"],
+    color: "blue"
+  },
+  {
+    category: "Analytics & Data",
+    skills: ["Funnel Analysis", "Cohort Analysis", "Product Metrics", "SQL Analysis"],
+    color: "emerald"
+  },
+  {
+    category: "Execution & Strategy",
+    skills: ["Agile / Scrum", "Stakeholder Management", "Customer Research", "Competitor Analysis", "API Understanding", "System Thinking", "Root Cause Analysis"],
+    color: "purple"
+  }
 ];
 
 const colorMap: Record<string, string> = {
@@ -78,7 +94,7 @@ export default function Home() {
 
           <div className="flex flex-wrap justify-center gap-3">
             <a
-              href="https://linkedin.com/in/gouthamshaji"
+              href="https://www.linkedin.com/in/goutham-shaji-ck-879b771b9/"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-medium text-sm transition-all hover:shadow-lg hover:shadow-blue-500/25 hover:-translate-y-0.5"
@@ -86,7 +102,9 @@ export default function Home() {
               <Linkedin size={16} /> Connect on LinkedIn
             </a>
             <a
-              href="mailto:gouthamshaji@gmail.com"
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=gouthamshaji@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 text-white font-medium text-sm transition-all hover:-translate-y-0.5"
             >
               <Mail size={16} /> Get in Touch
@@ -307,6 +325,37 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ─── CORE SKILLS ─────────────────────────────────────── */}
+      <section className="py-24 bg-[#0a0a0a]">
+        <div className="max-w-5xl mx-auto px-6">
+          <div className="text-center mb-14">
+            <p className="text-blue-400 text-sm font-semibold uppercase tracking-widest mb-3">Expertise</p>
+            <h2 className="text-3xl md:text-4xl font-bold font-serif text-white">Core Product Skills</h2>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {coreSkills.map((section) => (
+              <div
+                key={section.category}
+                className={`p-8 rounded-2xl border ${colorMap[section.color]} bg-[#111] hover:bg-[#161616] transition-colors`}
+              >
+                <h3 className={`text-xl font-bold mb-6 ${colorMap[section.color].split(" ")[1]}`}>
+                  {section.category}
+                </h3>
+                <ul className="flex flex-col gap-3">
+                  {section.skills.map((skill) => (
+                    <li key={skill} className="flex items-start gap-2 text-zinc-300">
+                      <span className={`mt-0.5 shrink-0 ${colorMap[section.color].split(" ")[1]}`}>•</span>
+                      <span className="text-sm leading-relaxed">{skill}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ─── TECH STACK ──────────────────────────────────────── */}
       <section className="py-24 bg-[#111111]">
         <div className="max-w-5xl mx-auto px-6">
@@ -315,18 +364,18 @@ export default function Home() {
             <h2 className="text-3xl md:text-4xl font-bold font-serif text-white">Tech Stack</h2>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
             {techStack.map((stack) => (
               <div
                 key={stack.category}
-                className={`p-4 rounded-xl border ${colorMap[stack.color]} bg-[#0a0a0a] hover:bg-[#0f0f0f] transition-colors`}
+                className={`p-5 rounded-xl border ${colorMap[stack.color]} bg-[#0a0a0a] hover:bg-[#0f0f0f] transition-colors`}
               >
-                <p className={`text-xs font-bold uppercase tracking-wider mb-2 ${colorMap[stack.color].split(" ")[1]}`}>
+                <p className={`text-xs font-bold uppercase tracking-wider mb-3 ${colorMap[stack.color].split(" ")[1]}`}>
                   {stack.category}
                 </p>
-                <div className="flex flex-col gap-0.5">
+                <div className="flex flex-wrap gap-2">
                   {stack.items.map((item) => (
-                    <span key={item} className="text-sm text-zinc-300">{item}</span>
+                    <span key={item} className="text-sm text-zinc-300 bg-white/5 border border-white/5 px-2 py-0.5 rounded-md">{item}</span>
                   ))}
                 </div>
               </div>
@@ -348,14 +397,16 @@ export default function Home() {
 
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <a
-              href="mailto:gouthamshaji@gmail.com"
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=gouthamshaji@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-3 px-6 py-3.5 rounded-xl border border-white/10 bg-[#111111] hover:border-white/20 hover:bg-[#161616] text-white text-sm font-medium transition-all"
             >
               <Mail size={18} className="text-zinc-400" />
               gouthamshaji@gmail.com
             </a>
             <a
-              href="https://linkedin.com/in/gouthamshaji"
+              href="https://www.linkedin.com/in/goutham-shaji-ck-879b771b9/"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-3 px-6 py-3.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white text-sm font-medium transition-all hover:shadow-lg hover:shadow-blue-500/20"

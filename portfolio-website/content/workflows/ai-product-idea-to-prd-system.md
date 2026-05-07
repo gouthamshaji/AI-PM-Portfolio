@@ -6,6 +6,7 @@ status: "published"
 date: "2025-04-28"
 tags: ["n8n", "AI", "Product Management", "Automation"]
 tech: ["n8n", "Google Gemini", "Google Sheets API"]
+githubUrl: "https://github.com/gouthamshaji/AI-PM-Portfolio/tree/main/Agentic%20work%20flows/ai-product-idea-to-prd-system"
 ---
 
 ## Workflow Overview

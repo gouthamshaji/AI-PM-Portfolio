@@ -8,6 +8,8 @@ company: "CloudEagle"
 role: "Associate Product Manager"
 duration: "Mar 2025 - Present"
 tags: ["AI Automation", "RPA", "SaaS", "Product Strategy"]
+pdf: "/pdfs/cloudeagle-rpa.pdf"
+githubUrl: "https://github.com/gouthamshaji/AI-PM-Portfolio/tree/main/Product%20case%20study/CloudEagle-ERP-Solution-CaseStudy"
 ---
 
 ## Problem

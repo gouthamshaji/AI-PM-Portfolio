@@ -10,6 +10,7 @@ const navLinks = [
   { href: "/case-studies", label: "Case Studies" },
   { href: "/projects", label: "Projects" },
   { href: "/prds", label: "PRDs" },
+  { href: "/resume", label: "Resume" },
 ];
 
 export function Navigation() {
@@ -50,6 +51,8 @@ export function Navigation() {
             <li key={link.href}>
               <Link
                 href={link.href}
+                target={link.external ? "_blank" : undefined}
+                rel={link.external ? "noopener noreferrer" : undefined}
                 className="text-[#a1a1aa] hover:text-white text-sm font-medium transition-colors relative group px-3 py-2 rounded-lg hover:bg-white/5"
               >
                 {link.label}
@@ -96,6 +99,8 @@ export function Navigation() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
+                    target={link.external ? "_blank" : undefined}
+                    rel={link.external ? "noopener noreferrer" : undefined}
                     onClick={() => setIsOpen(false)}
                     className="block py-3 px-4 rounded-lg text-[#a1a1aa] hover:text-white hover:bg-white/5 text-sm font-medium transition-colors"
                   >

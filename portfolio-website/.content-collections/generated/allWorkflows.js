@@ -17,6 +17,7 @@ export default [
       "Google Gemini",
       "Google Sheets API"
     ],
+    "githubUrl": "https://github.com/gouthamshaji/AI-PM-Portfolio/tree/main/Agentic%20work%20flows/ai-product-idea-to-prd-system",
     "content": "## Workflow Overview\n\nA sophisticated multi-agent pipeline that transforms raw product ideas into comprehensive, actionable PRDs in under 5 minutes.\n\n## How It Works\n\n1. User submits product idea via Google Sheet\n2. Ideation Agent refines concepts and generates alternatives\n3. Market Analysis Agent estimates TAM/SAM and competitive landscape\n4. Prioritization Agent scores using ICE framework\n5. Roadmap Agent creates phased execution plan\n6. Complete PRD output with success metrics\n\n## Multi-Agent Architecture\n\n- Ideation Agent - Refines concepts, identifies core problems\n- Market Analysis Agent - TAM/SAM estimation, competitive analysis\n- Prioritization Agent - ICE scoring, business value assessment\n- Roadmap Agent - MVP through scale phases, team requirements",
     "_meta": {
       "filePath": "ai-product-idea-to-prd-system.md",
@@ -43,6 +44,7 @@ export default [
       "Google Gemini",
       "Gmail API"
     ],
+    "githubUrl": "https://github.com/gouthamshaji/AI-PM-Portfolio/tree/main/Agentic%20work%20flows/ai-stock-analysis-email-agent",
     "content": "## Workflow Overview\n\nAn automated workflow that receives stock ticker symbols and delivers comprehensive investment analysis via email.\n\n## How It Works\n\n1. User sends stock ticker via chat interface\n2. Workflow fetches stock data from financial APIs\n3. AI analyzes technical and fundamental indicators\n4. Comprehensive report generated\n5. Email delivered with analysis and recommendations\n\n## Key Features\n\n- Chat-based trigger interface\n- Technical & fundamental analysis\n- Clear recommendations with confidence scores\n- Automated email delivery",
     "_meta": {
       "filePath": "ai-stock-analysis-email-agent.md",

@@ -6,12 +6,12 @@ export const siteConfig = {
   author: {
     name: "Goutham Shaji CK",
     email: "gouthamshaji@gmail.com",
-    linkedin: "https://linkedin.com/in/gouthamshaji",
+    linkedin: "https://www.linkedin.com/in/goutham-shaji-ck-879b771b9/",
     github: "https://github.com/gouthamshaji"
   },
   social: {
-    linkedin: "https://linkedin.com/in/gouthamshaji",
+    linkedin: "https://www.linkedin.com/in/goutham-shaji-ck-879b771b9/",
     github: "https://github.com/gouthamshaji",
-    email: "mailto:gouthamshaji@gmail.com"
+    email: "https://mail.google.com/mail/?view=cm&fs=1&to=gouthamshaji@gmail.com"
   }
 }

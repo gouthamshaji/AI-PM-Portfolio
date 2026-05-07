@@ -69,13 +69,15 @@ export default function AboutPage() {
           <h2 className="text-2xl font-bold font-serif text-white mb-6">Get in Touch</h2>
           <div className="flex flex-wrap gap-3">
             <a
-              href="mailto:gouthamshaji@gmail.com"
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border border-white/10 bg-[#111] hover:border-white/20 hover:bg-white/5 text-white text-sm transition-all"
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=gouthamshaji@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 text-white text-sm transition-all"
             >
               <Mail size={16} className="text-zinc-400" /> gouthamshaji@gmail.com
             </a>
             <a
-              href="https://linkedin.com/in/gouthamshaji"
+              href="https://www.linkedin.com/in/goutham-shaji-ck-879b771b9/"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white text-sm transition-all hover:shadow-lg hover:shadow-blue-500/20"

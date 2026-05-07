@@ -6,6 +6,7 @@ status: "published"
 date: "2025-02-28"
 type: "vibe-coding"
 githubUrl: "https://github.com/gouthamshaji/nomadai"
+liveUrl: "https://venerable-gelato-7c94a5.netlify.app/auth"
 tags: ["Next.js", "React", "Travel", "AI"]
 ---
 

@@ -1,7 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, Workflow } from "lucide-react";
+import { ArrowRight, Workflow, ExternalLink } from "lucide-react";
+import { Github } from "@/components/icons";
 import Link from "next/link";
 import { Card } from "@/components/ui/Card";
 import { Badge } from "@/components/ui/Badge";
@@ -12,6 +13,8 @@ interface WorkflowCardProps {
     description: string;
     slug: string;
     tech: string[];
+    liveUrl?: string;
+    githubUrl?: string;
   };
 }
 
@@ -20,7 +23,7 @@ export function WorkflowCard({ workflow }: WorkflowCardProps) {
     <motion.div
       whileHover={{ scale: 1.02 }}
       transition={{ type: "spring", stiffness: 300 }}
-      className="group"
+      className="group relative"
     >
       <Link href={`/workflows/${workflow.slug}`}>
         <Card className="h-full flex flex-col hover:border-cyan-500/50 hover:shadow-[0_0_30px_-5px_rgba(6,182,212,0.3)] transition-all duration-300">
@@ -44,6 +47,34 @@ export function WorkflowCard({ workflow }: WorkflowCardProps) {
           </div>
         </Card>
       </Link>
+      
+      {/* External Links */}
+      {(workflow.liveUrl || workflow.githubUrl) && (
+        <div className="absolute top-4 right-4 z-20 flex gap-2">
+          {workflow.githubUrl && (
+            <a
+              href={workflow.githubUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 rounded-full bg-black/50 border border-white/10 text-zinc-400 hover:text-white hover:border-white/30 backdrop-blur-md transition-colors"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <Github size={16} />
+            </a>
+          )}
+          {workflow.liveUrl && (
+            <a
+              href={workflow.liveUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 rounded-full bg-cyan-500/20 border border-cyan-500/30 text-cyan-400 hover:text-cyan-300 hover:bg-cyan-500/30 backdrop-blur-md transition-colors"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <ExternalLink size={16} />
+            </a>
+          )}
+        </div>
+      )}
     </motion.div>
   );
 }

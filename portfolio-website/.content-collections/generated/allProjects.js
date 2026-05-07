@@ -7,6 +7,7 @@ export default [
     "status": "published",
     "date": "2025-02-28",
     "type": "vibe-coding",
+    "liveUrl": "https://venerable-gelato-7c94a5.netlify.app/auth",
     "githubUrl": "https://github.com/gouthamshaji/nomadai",
     "tags": [
       "Next.js",
@@ -30,7 +31,7 @@ export default [
     "status": "published",
     "date": "2025-03-26",
     "type": "vibe-coding",
-    "liveUrl": "https://peeko-companion.vercel.app",
+    "liveUrl": "https://peeko-daily-companion.netlify.app/",
     "githubUrl": "https://github.com/gouthamshaji/peeko-companion",
     "tags": [
       "JavaScript",
@@ -54,6 +55,7 @@ export default [
     "status": "published",
     "date": "2025-03-27",
     "type": "vibe-coding",
+    "liveUrl": "https://timely-ai-wedding-planner-tsnh.vercel.app/",
     "githubUrl": "https://github.com/gouthamshaji/timely-ai-wedding-planner",
     "tags": [
       "Next.js",

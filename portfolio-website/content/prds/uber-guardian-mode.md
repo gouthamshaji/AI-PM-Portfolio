@@ -7,6 +7,8 @@ date: "2025-02-20"
 company: "Uber"
 type: "prd"
 tags: ["Safety", "Real-time Monitoring", "Emergency Response"]
+githubUrl: "https://github.com/gouthamshaji/AI-PM-Portfolio/blob/main/PRD/Uber_Safety_Assurance_Mode-Guardian_Mode_.pdf"
+liveUrl: "https://www.notion.so/PRD-Uber-Safety-Assurance-Mode-Guardian-Mode-30704813aa2c80678e3cc62689afd7ea?source=copy_link"
 ---
 
 ## Overview

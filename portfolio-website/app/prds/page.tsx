@@ -91,10 +91,26 @@ export default function PrdsPage() {
                     )}
                   </div>
 
-                  {prd.pdf && (
-                    <div className="flex items-center gap-1.5 text-xs text-blue-400">
-                      <Download size={12} />
-                      <span>PDF available</span>
+                  {(prd.pdf || prd.liveUrl || prd.githubUrl) && (
+                    <div className="flex flex-wrap items-center gap-3 mt-4">
+                      {prd.liveUrl && (
+                        <div className="flex items-center gap-1.5 text-xs font-medium text-emerald-400 bg-emerald-500/10 px-2 py-1 rounded border border-emerald-500/20">
+                          <FileText size={12} />
+                          <span>Notion Link</span>
+                        </div>
+                      )}
+                      {prd.pdf && (
+                        <div className="flex items-center gap-1.5 text-xs font-medium text-blue-400 bg-blue-500/10 px-2 py-1 rounded border border-blue-500/20">
+                          <Download size={12} />
+                          <span>PDF available</span>
+                        </div>
+                      )}
+                      {prd.githubUrl && (
+                        <div className="flex items-center gap-1.5 text-xs font-medium text-zinc-400 bg-white/5 px-2 py-1 rounded border border-white/10">
+                          <FileText size={12} />
+                          <span>GitHub</span>
+                        </div>
+                      )}
                     </div>
                   )}
                 </div>

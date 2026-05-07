@@ -13,6 +13,8 @@ var workflows = defineCollection({
     date: z.string(),
     tags: z.array(z.string()),
     tech: z.array(z.string()),
+    githubUrl: z.string().optional(),
+    liveUrl: z.string().optional(),
     content: z.string().optional()
   })
 });
@@ -30,6 +32,8 @@ var caseStudies = defineCollection({
     role: z.string(),
     duration: z.string(),
     tags: z.array(z.string()),
+    githubUrl: z.string().optional(),
+    liveUrl: z.string().optional(),
     pdf: z.string().optional(),
     content: z.string().optional()
   })
@@ -67,6 +71,8 @@ var prds = defineCollection({
     company: z.string(),
     type: z.string(),
     tags: z.array(z.string()),
+    githubUrl: z.string().optional(),
+    liveUrl: z.string().optional(),
     pdf: z.string().optional(),
     content: z.string().optional()
   })

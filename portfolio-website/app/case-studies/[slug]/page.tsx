@@ -71,17 +71,30 @@ export default async function CaseStudyDetailPage({ params }: { params: Promise<
           </div>
         </div>
 
-        {/* Download Deck */}
+        {/* Document Viewer */}
         {cs.pdf && (
-          <div className="mb-8">
-            <a
-              href={cs.pdf}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 hover:bg-emerald-500/20 transition-colors text-sm font-medium"
-            >
-              <Download size={16} /> Download Presentation Deck
-            </a>
+          <div className="mb-12">
+            <div className="flex items-center justify-between mb-4">
+              <h3 className="text-sm font-semibold uppercase tracking-wider text-zinc-400">
+                Case Study Document
+              </h3>
+              <a
+                href={cs.pdf}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 text-xs text-emerald-400 hover:text-emerald-300 transition-colors"
+                download
+              >
+                <Download size={14} /> Download PDF
+              </a>
+            </div>
+            <div className="w-full h-[70vh] rounded-2xl border border-white/10 bg-white/5 overflow-hidden relative">
+              <iframe 
+                src={`${cs.pdf}#toolbar=0&navpanes=0&scrollbar=0`}
+                className="w-full h-full border-none"
+                title={`${cs.title} Document`}
+              />
+            </div>
           </div>
         )}
 

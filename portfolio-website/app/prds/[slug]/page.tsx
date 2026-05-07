@@ -70,17 +70,39 @@ export default async function PrdDetailPage({ params }: { params: Promise<{ slug
           </div>
         </div>
 
-        {/* Download PDF */}
-        {prd.pdf && (
-          <div className="mb-8">
-            <a
-              href={prd.pdf}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-blue-500/10 border border-blue-500/20 text-blue-400 hover:bg-blue-500/20 transition-colors text-sm font-medium"
-            >
-              <Download size={16} /> Download PRD PDF
-            </a>
+        {/* External Links */}
+        {(prd.pdf || prd.liveUrl || prd.githubUrl) && (
+          <div className="mb-8 flex flex-wrap gap-4">
+            {prd.pdf && (
+              <a
+                href={prd.pdf}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-blue-500/10 border border-blue-500/20 text-blue-400 hover:bg-blue-500/20 transition-colors text-sm font-medium"
+              >
+                <Download size={16} /> Download PRD PDF
+              </a>
+            )}
+            {prd.liveUrl && (
+              <a
+                href={prd.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 hover:bg-emerald-500/20 transition-colors text-sm font-medium"
+              >
+                <FileText size={16} /> View Full PRD on Notion
+              </a>
+            )}
+            {prd.githubUrl && (
+              <a
+                href={prd.githubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-white/5 border border-white/10 text-zinc-300 hover:bg-white/10 transition-colors text-sm font-medium"
+              >
+                <FileText size={16} /> View on GitHub
+              </a>
+            )}
           </div>
         )}
 

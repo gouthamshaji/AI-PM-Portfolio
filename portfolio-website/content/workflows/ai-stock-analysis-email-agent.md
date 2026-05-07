@@ -6,6 +6,7 @@ status: "published"
 date: "2025-03-15"
 tags: ["n8n", "AI", "Stock Analysis", "Email Automation"]
 tech: ["n8n", "Google Gemini", "Gmail API"]
+githubUrl: "https://github.com/gouthamshaji/AI-PM-Portfolio/tree/main/Agentic%20work%20flows/ai-stock-analysis-email-agent"
 ---
 
 ## Workflow Overview

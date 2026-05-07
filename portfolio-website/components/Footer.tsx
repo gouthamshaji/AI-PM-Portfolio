@@ -3,11 +3,7 @@ import { Mail } from "lucide-react";
 import { Github, Linkedin } from "@/components/icons";
 import { siteConfig } from "@/content/config/site";
 
-const footerLinks = [
-  { href: "/", label: "Privacy" },
-  { href: "/", label: "Terms" },
-  { href: "/", label: "Sitemap" },
-];
+
 
 export function Footer() {
   return (
@@ -23,21 +19,7 @@ export function Footer() {
           </p>
         </div>
 
-        {/* Links */}
-        <nav aria-label="Footer navigation">
-          <ul className="flex items-center gap-6" role="list">
-            {footerLinks.map((link) => (
-              <li key={link.label}>
-                <Link
-                  href={link.href}
-                  className="text-[#71717a] hover:text-white text-sm transition-colors"
-                >
-                  {link.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </nav>
+
 
         {/* Social */}
         <div className="flex items-center gap-4">
@@ -61,6 +43,8 @@ export function Footer() {
           </a>
           <a
             href={siteConfig.social.email}
+            target="_blank"
+            rel="noopener noreferrer"
             aria-label="Email me"
             className="p-2 rounded-lg text-[#71717a] hover:text-white hover:bg-white/5 transition-colors"
           >
