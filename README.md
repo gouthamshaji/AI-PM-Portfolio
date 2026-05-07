@@ -187,7 +187,7 @@ My approach to product management is rooted in:
 I'm always interested in discussing product strategy, AI applications, and opportunities to build impactful products.
 
 - **Email:** gouthamshaji@gmail.com
-- **LinkedIn:** [Connect with me](https://linkedin.com/in/gouthamshaji)
+- **LinkedIn:** [Connect with me](https://www.linkedin.com/in/goutham-shaji-ck-879b771b9/)
 - **GitHub:** [github.com/gouthamshaji](https://github.com/gouthamshaji)
 
 ---
