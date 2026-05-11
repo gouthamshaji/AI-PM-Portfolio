@@ -4,7 +4,13 @@ import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const navLinks = [
+interface NavLink {
+  href: string;
+  label: string;
+  external?: boolean;
+}
+
+const navLinks: NavLink[] = [
   { href: "/#about", label: "About" },
   { href: "/workflows", label: "AI Workflows" },
   { href: "/case-studies", label: "Case Studies" },
